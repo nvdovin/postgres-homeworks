@@ -46,13 +46,13 @@ class PostgresData:
         cur.close()
 
     def main_function(self):
-        counter = 1
+        """ Главная функция программы """
+
         for database in self.csv_data:
             self.write_to_database(database)
-            print(f"{counter}")
-            counter += 1
+            print(f"Данные из {database.split('_')[0]}.csv успешно записаны в БД. ")
 
 
-
-pg = PostgresData()
-pg.main_function()
+if __name__ == "__main__":
+    pg = PostgresData()
+    pg.main_function()

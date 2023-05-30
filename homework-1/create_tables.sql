@@ -19,8 +19,16 @@ CREATE TABLE employees
 CREATE TABLE orders
 (
 	order_id int PRIMARY KEY,
-	customer_id varchar(10) UNIQUE REFERENCES customers(customers_id) NOT NULL,
+	customer_id varchar(10) REFERENCES customers(customers_id),
 	employee_id int,
 	order_date varchar(10),
 	ship_city varchar(50)
 );
+
+SELECT * FROM customers;
+SELECT * FROM employees;
+SELECT * FROM orders;
+
+DELETE FROM customers;
+DELETE FROM employees;
+DELETE FROM orders;
